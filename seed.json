@@ -1,0 +1,27 @@
+{
+    "users": [
+        {
+            "name": "Jon Doe",
+            "goals": [
+                "Make my hair",
+                "Learn Javascript"
+            ]
+        },
+        {
+            "name": "Seyi Michael",
+            "goals": [
+                "Visit Jon",
+                "Learn Javascript",
+                "Play tennis"
+            ]
+        },
+        {
+            "name": "Michael Oy",
+            "goals": [
+                "Call Jon",
+                "Learn More Javascript",
+                "Play football"
+            ]
+        }
+    ]
+}
