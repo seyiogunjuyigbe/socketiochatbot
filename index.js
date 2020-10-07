@@ -2,9 +2,13 @@ const express = require("express");
 const app = express();
 const port = process.env.PORT || 3000;
 const chatRoutes = require('./routes');
-const io = require('socket.io')(app.listen(port, '0.0.0.0'));
+const io = require('socket.io')(app.listen(port, '0.0.0.0', () => console.log("Server started")));
+const bodyParser = require("body-parser")
+const { seedData } = require('./helpers');
+app.use(bodyParser.urlencoded({ extended: true }));
 
 app.set('view engine', 'ejs')
+seedData();
 app.use(express.static(__dirname + "./public"));
 app.use("", chatRoutes)
 io.on('connection', (socket) => {
@@ -25,7 +29,3 @@ io.on('connection', (socket) => {
     })
 
 })
-// routes
-
-
-
